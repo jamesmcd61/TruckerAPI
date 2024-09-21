@@ -1,0 +1,7 @@
+C:\Users\user\source\repos\jamesmcd61\TruckerAPI\TuckerAPIProject\obj\Debug\net6.0\TuckerAPIProject.csproj.AssemblyReference.cache
+C:\Users\user\source\repos\jamesmcd61\TruckerAPI\TuckerAPIProject\obj\Debug\net6.0\TuckerAPIProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\jamesmcd61\TruckerAPI\TuckerAPIProject\obj\Debug\net6.0\TuckerAPIProject.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\jamesmcd61\TruckerAPI\TuckerAPIProject\obj\Debug\net6.0\TuckerAPIProject.AssemblyInfo.cs
+C:\Users\user\source\repos\jamesmcd61\TruckerAPI\TuckerAPIProject\obj\Debug\net6.0\TuckerAPIProject.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\jamesmcd61\TruckerAPI\TuckerAPIProject\obj\Debug\net6.0\TuckerAPIProject.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\user\source\repos\jamesmcd61\TruckerAPI\TuckerAPIProject\obj\Debug\net6.0\TuckerAPIProject.MvcApplicationPartsAssemblyInfo.cache

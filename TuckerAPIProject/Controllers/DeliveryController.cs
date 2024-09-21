@@ -17,9 +17,9 @@ namespace TuckerAPIProject.Controllers
         }
 
         [HttpGet(Name = "GetWeatherForecast")]
-        public IEnumerable<> Get()
+        public void Get()
         {
-            return 
+            return;
         }
     }
 }
