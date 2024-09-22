@@ -1,15 +1,15 @@
-namespace TuckerAPIProject.Controllers
+﻿namespace TuckerAPIProject.Controllers
 {
     using Microsoft.AspNetCore.Mvc;
 
     [ApiController]
     [Route("[controller]")]
-    public class DeliveryController : ControllerBase
+    public class TruckerInfoController : ControllerBase
     {
         [HttpGet]
         public void Get()
         {
             return;
         }
-    }; 
+    }
 }
