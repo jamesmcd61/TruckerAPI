@@ -2,14 +2,24 @@
 {
     using Microsoft.AspNetCore.Mvc;
 
+    using TuckerAPIProject.Data;
+    using TuckerAPIProject.Dto;
+
     [ApiController]
-    [Route("[controller]")]
     public class TruckerInfoController : ControllerBase
     {
+        private DbContext dbContext;
+
+        public TruckerInfoController(DbContext dbContext) 
+        { 
+            this.dbContext = dbContext;
+        }
+
         [HttpGet]
-        public void Get()
+        [Route("[controller]/{name}")]
+        public TruckerInfoDto? Get(string name)
         {
-            return;
+            return this.dbContext.TruckerInfo.Where(_ => _.Name == name).FirstOrDefault();
         }
     }
 }

@@ -11,5 +11,7 @@ namespace TuckerAPIProject.Dto
         public PackageDto Package { get; set; }
 
         public TruckerInfoDto TruckerInfo { get; set; }
+
+        public AccountDto Account { get; set; }
     }
 }

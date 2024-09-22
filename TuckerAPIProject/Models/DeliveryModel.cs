@@ -22,5 +22,9 @@ namespace TuckerAPIProject.Models
         public int TruckerInfoId { get; set; }
 
         public virtual TruckerInfoModel TruckerInfo { get; set; }
+
+        public int AccountId { get; set; }
+
+        public virtual AccountModel Account { get; set;}
     }
 }

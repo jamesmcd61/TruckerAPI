@@ -6,6 +6,6 @@
 
         public string Description { get; set; }
 
-        public string Version { get; set; }
+        public double Price { get; set; }
     }
 }

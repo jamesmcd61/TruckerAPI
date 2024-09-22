@@ -2,14 +2,24 @@
 {
     using Microsoft.AspNetCore.Mvc;
 
+    using TuckerAPIProject.Data;
+    using TuckerAPIProject.Dto;
+
     [ApiController]
-    [Route("[controller]")]
     public class PackageController : ControllerBase
     {
-        [HttpGet]
-        public void Get()
+        private DbContext dbContext;
+
+        public PackageController(DbContext dbContext) 
         {
-            return;
+            this.dbContext = dbContext;
+        }
+
+        [HttpGet]
+        [Route("[controller]/{name}")]
+        public PackageDto? Get(string name)
+        {
+            return this.dbContext.Package.Where(_ => _.Name == name).FirstOrDefault();
         }
     }
 }
