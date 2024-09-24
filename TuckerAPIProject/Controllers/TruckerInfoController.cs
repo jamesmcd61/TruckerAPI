@@ -21,5 +21,21 @@
         {
             return this.dbContext.TruckerInfo.Where(_ => _.Name == name).FirstOrDefault();
         }
+
+        [HttpPost]
+        [Route("[controller]")]
+        public void Post(TruckerInfoDto truckerInfo)
+        {
+            this.dbContext.Set<TruckerInfoDto>().Add(truckerInfo);
+            this.dbContext.SaveChangesAsync();
+        }
+
+        [HttpPatch]
+        [Route("[controller]")]
+        public void Patch(TruckerInfoDto truckerInfo)
+        {
+            this.dbContext.Set<TruckerInfoDto>().Update(truckerInfo);
+            this.dbContext.SaveChangesAsync();
+        }
     }
 }

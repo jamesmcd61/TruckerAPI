@@ -21,5 +21,21 @@
         {
             return this.dbContext.Account.Where(_ => _.UserName == userName && _.Password == password).FirstOrDefault();
         }
+
+        [HttpPost]
+        [Route("[controller]")]
+        public void Post(AccountDto account)
+        {
+            this.dbContext.Set<AccountDto>().Add(account);
+            this.dbContext.SaveChangesAsync();
+        }
+
+        [HttpPatch]
+        [Route("[controller]")]
+        public void Patch(AccountDto account)
+        {
+            this.dbContext.Set<AccountDto>().Update(account);
+            this.dbContext.SaveChangesAsync();
+        }
     }
 }

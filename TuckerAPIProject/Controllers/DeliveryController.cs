@@ -21,5 +21,21 @@ namespace TuckerAPIProject.Controllers
         {
             return this.dbContext.Delivery.Where(_ => _.Date == date && _.Account.UserName == userName).FirstOrDefault();
         }
+
+        [HttpPost]
+        [Route("[controller]")]
+        public void Post(DeliveryDto delivery)
+        {
+            this.dbContext.Set<DeliveryDto>().Add(delivery);
+            this.dbContext.SaveChangesAsync();
+        }
+
+        [HttpPatch]
+        [Route("[controller]")]
+        public void Patch(DeliveryDto delivery)
+        {
+            this.dbContext.Set<DeliveryDto>().Update(delivery);
+            this.dbContext.SaveChangesAsync();
+        }
     }; 
 }
