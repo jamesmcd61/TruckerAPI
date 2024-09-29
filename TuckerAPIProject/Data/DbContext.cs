@@ -6,7 +6,9 @@
 
     public class DbContext : Microsoft.EntityFrameworkCore.DbContext
     {
-        public DbContext() { }
+        public DbContext(DbContextOptions<DbContext> options) : base(options)
+        {
+        }
 
         public DbSet<AccountDto> Account { get; set; } = null!;
 

@@ -26,6 +26,7 @@
         [Route("[controller]")]
         public void Post(AccountDto account)
         {
+            this.dbContext
             this.dbContext.Set<AccountDto>().Add(account);
             this.dbContext.SaveChangesAsync();
         }
