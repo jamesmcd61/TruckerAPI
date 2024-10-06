@@ -5,6 +5,7 @@ namespace TuckerAPIProject.Controllers
 
     using TuckerAPIProject.Data;
     using TuckerAPIProject.Dto;
+    using TuckerAPIProject.Models;
 
     [ApiController]
     public class DeliveryController : ControllerBase
@@ -28,10 +29,12 @@ namespace TuckerAPIProject.Controllers
 
         [HttpPost]
         [Route("[controller]")]
-        public void Post(DeliveryDto delivery)
+        public async Task<IActionResult> Post(DeliveryDto delivery)
         {
-            this.dbContext.Set<DeliveryDto>().Add(delivery);
-            this.dbContext.SaveChangesAsync();
+            var deliveryToSave = this.mapper.Map<DeliveryModel>(delivery);
+            this.dbContext.Set<DeliveryModel>().Add(deliveryToSave);
+            await this.dbContext.SaveChangesAsync();
+            return Ok();
         }
 
         [HttpPatch]

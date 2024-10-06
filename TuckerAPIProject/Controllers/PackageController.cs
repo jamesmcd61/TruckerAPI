@@ -5,6 +5,7 @@
 
     using TuckerAPIProject.Data;
     using TuckerAPIProject.Dto;
+    using TuckerAPIProject.Models;
 
     [ApiController]
     public class PackageController : ControllerBase
@@ -28,10 +29,12 @@
 
         [HttpPost]
         [Route("[controller]")]
-        public void Post(PackageDto package)
+        public async Task<IActionResult> Post(PackageDto package)
         {
-            this.dbContext.Set<PackageDto>().Add(package);
-            this.dbContext.SaveChangesAsync();
+            var packageToSave = this.mapper.Map<PackageModel>(package);
+            this.dbContext.Set<PackageModel>().Add(packageToSave);
+            await this.dbContext.SaveChangesAsync();
+            return this.Ok();
         }
 
         [HttpPatch]
