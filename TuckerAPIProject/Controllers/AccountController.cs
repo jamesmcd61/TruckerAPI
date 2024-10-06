@@ -2,6 +2,8 @@
 {
     using Microsoft.AspNetCore.Mvc;
 
+
+
     using TuckerAPIProject.Data;
     using TuckerAPIProject.Dto;
 
@@ -26,7 +28,7 @@
         [Route("[controller]")]
         public void Post(AccountDto account)
         {
-            this.dbContext
+            this.dbContext.ProjectTo
             this.dbContext.Set<AccountDto>().Add(account);
             this.dbContext.SaveChangesAsync();
         }

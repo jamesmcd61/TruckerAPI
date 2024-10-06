@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "6IOEi7jYSuS24/tF85TIWzOIS4gzOX/wWByrbLHdmMNqYXLnlxT+1AUH5IF9i0oJwPaO0sHNic01jMqIgaIhzg==",
+  "dgSpecHash": "ldz7vXI1NpjZcvukQ0aQeIZpjghoGi+sDDiPTDQr3k70VT3mv4TLnD5L61G7MkzUxmvhJ9+GK/w0KyAEkNmu8w==",
   "success": true,
   "projectFilePath": "C:\\Users\\user\\source\\repos\\jamesmcd61\\TruckerAPI\\TuckerAPIProject\\TuckerAPIProject.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\user\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.cors\\2.2.0\\microsoft.aspnetcore.cors.2.2.0.nupkg.sha512",
