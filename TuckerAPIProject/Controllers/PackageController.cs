@@ -1,5 +1,6 @@
 ﻿namespace TuckerAPIProject.Controllers
 {
+    using AutoMapper;
     using Microsoft.AspNetCore.Mvc;
 
     using TuckerAPIProject.Data;
@@ -8,18 +9,21 @@
     [ApiController]
     public class PackageController : ControllerBase
     {
-        private DbContext dbContext;
+        private readonly DbContext dbContext;
+        private readonly IMapper mapper;
 
-        public PackageController(DbContext dbContext) 
+        public PackageController(DbContext dbContext, IMapper mapper) 
         {
             this.dbContext = dbContext;
+            this.mapper = mapper;
         }
 
         [HttpGet]
         [Route("[controller]/{name}")]
         public PackageDto? Get(string name)
         {
-            return this.dbContext.Package.Where(_ => _.Name == name).FirstOrDefault();
+            var package = this.dbContext.Package.Where(_ => _.Name == name).FirstOrDefault();
+            return this.mapper.Map<PackageDto>(package);
         }
 
         [HttpPost]

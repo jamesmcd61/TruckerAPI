@@ -78,3 +78,4 @@ C:\Users\user\source\repos\jamesmcd61\TruckerAPI\TuckerAPIProject\obj\Debug\net6
 C:\Users\user\source\repos\jamesmcd61\TruckerAPI\TuckerAPIProject\obj\Debug\net6.0\TuckerAPIProject.pdb
 C:\Users\user\source\repos\jamesmcd61\TruckerAPI\TuckerAPIProject\obj\Debug\net6.0\TuckerAPIProject.genruntimeconfig.cache
 C:\Users\user\source\repos\jamesmcd61\TruckerAPI\TuckerAPIProject\obj\Debug\net6.0\ref\TuckerAPIProject.dll
+C:\Users\user\source\repos\jamesmcd61\TruckerAPI\TuckerAPIProject\bin\Debug\net6.0\AutoMapper.dll

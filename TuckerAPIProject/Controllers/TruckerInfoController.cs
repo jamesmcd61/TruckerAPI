@@ -1,5 +1,6 @@
 ﻿namespace TuckerAPIProject.Controllers
 {
+    using AutoMapper;
     using Microsoft.AspNetCore.Mvc;
 
     using TuckerAPIProject.Data;
@@ -8,18 +9,21 @@
     [ApiController]
     public class TruckerInfoController : ControllerBase
     {
-        private DbContext dbContext;
+        private readonly DbContext dbContext;
+        private readonly IMapper mapper;
 
-        public TruckerInfoController(DbContext dbContext) 
+        public TruckerInfoController(DbContext dbContext, IMapper mapper) 
         { 
             this.dbContext = dbContext;
+            this.mapper = mapper;
         }
 
         [HttpGet]
         [Route("[controller]/{name}")]
         public TruckerInfoDto? Get(string name)
         {
-            return this.dbContext.TruckerInfo.Where(_ => _.Name == name).FirstOrDefault();
+            var truckerInfo = this.dbContext.TruckerInfo.Where(_ => _.Name == name).FirstOrDefault();
+            return this.mapper.Map<TruckerInfoDto>(truckerInfo);
         }
 
         [HttpPost]

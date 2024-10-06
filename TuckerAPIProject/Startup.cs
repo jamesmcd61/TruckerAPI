@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
+using TuckerAPIProject.Profiles;
 
 namespace TuckerAPIProject
 {
@@ -19,6 +21,14 @@ namespace TuckerAPIProject
             {
                 options.AddPolicy("AllowSpecificOrigin", builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
             });
+
+            var mapperConfig = new MapperConfiguration(profile =>
+            {
+                profile.AddProfile(new AccountProfile());
+            });
+
+            IMapper mapper = mapperConfig.CreateMapper();
+            services.AddSingleton<IMapper>(mapper);
 
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
