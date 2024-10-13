@@ -22,12 +22,16 @@
             this.mapper = mapper;
         }
 
-        [HttpGet]
-        [Route("[controller]/{userName}/{password}")]
-        public AccountDto? Get(string userName, string password)
+        [HttpPost]
+        [Route("[controller]/Auth")]
+        public IActionResult PostAuth(AccountDto account)
         {
-            var account = this.dbContext.Account.Where(_ => _.UserName == userName && _.Password == password).FirstOrDefault();
-            return this.mapper.Map<AccountDto>(account);
+            var accountResult = this.dbContext.Account.Where(_ => _.UserName == account.UserName && _.Password == account.Password).FirstOrDefault();
+            if (accountResult == null)
+            {
+                return this.BadRequest();
+            }
+            return this.Ok();
         }
 
         [HttpPost]

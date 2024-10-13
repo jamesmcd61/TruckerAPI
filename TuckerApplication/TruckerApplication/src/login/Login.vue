@@ -35,15 +35,14 @@
         const validInputs = this.validateInput(this.userName.value, this.userPassword.value);
 
         if (validInputs) {
-            const response = await axios.post('http://localhost:42264/Auth/Login', {
+            const response = await axios.post('https://localhost:7278/Account/Auth', {
                 Username: this.userName.value,
-                UserPassword: this.userPassword.value
+                Password: this.userPassword.value
             });
+
             if (response.status == '200') {
                 window.location = '/planner';
             }
-            //.then(function (response) {
-            //});
         }
     }
 
