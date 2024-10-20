@@ -12,6 +12,9 @@ import Register from './register/Register.vue';
 import Planner from './components/Planner.vue';
 
 import 'primevue/resources/themes/aura-light-green/theme.css'
+import 'devextreme/dist/css/dx.light.css';
+import '@coreui/coreui/dist/css/coreui.min.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const router = createRouter({
     history: createWebHistory(),
