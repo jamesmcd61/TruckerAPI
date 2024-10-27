@@ -28,7 +28,8 @@
         </DxScheduler>
     </CTabPane>
     <CTabPane role="tabpanel" aria-labelledby="profile-tab" :visible="tabPaneActiveKey === 2">
-        Put here the Component for Delivery Man Information
+        <DeliveryManInfo>
+        </DeliveryManInfo>
     </CTabPane>
     <CTabPane role="tabpanel" aria-labelledby="contact-tab" :visible="tabPaneActiveKey === 3">
         Put here the Component for the Delivery Information
@@ -42,6 +43,8 @@
     import moment from 'moment';
     import { DxScheduler, DxResource } from 'devextreme-vue/scheduler';
     import { CNav, CNavItem, CNavLink, CTabPane, CTabContent } from '@coreui/vue'
+    import DeliveryManInfo from './DeliveryManInfo.vue';
+    import DeliveryInfo from './DeliveryInfo.vue';
 
     const tabPaneActiveKey = ref(1)
 
