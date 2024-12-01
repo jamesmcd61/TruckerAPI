@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using System.Globalization;
+using TuckerAPIProject.Middleware;
 using TuckerAPIProject.Profiles;
 
 namespace TuckerAPIProject
@@ -30,6 +32,8 @@ namespace TuckerAPIProject
             IMapper mapper = mapperConfig.CreateMapper();
             services.AddSingleton<IMapper>(mapper);
 
+            services.AddTransient<AuthMiddleware>();
+
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
 
@@ -53,6 +57,7 @@ namespace TuckerAPIProject
                 app.UseSwaggerUI();
             }
 
+            app.UseMiddleware<AuthMiddleware>();
             app.UseCors("AllowSpecificOrigin");
             app.UseDefaultFiles();
             app.UseHttpsRedirection();

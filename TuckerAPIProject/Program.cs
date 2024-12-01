@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using TuckerAPIProject;
+using TuckerAPIProject.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
